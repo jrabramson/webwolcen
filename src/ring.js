@@ -12,7 +12,7 @@ const Node = ({ x, y, onClick, radius, color }) => {
       radius={radius}
       fill={color}
       verticalAlign="middle"
-      stroke="#0B0023"
+      stroke="white"
       strokeWidth={1}
       onClick={onClick}
       x={x}
@@ -54,13 +54,12 @@ export default ({
   }, [triggerRotation, setTriggerRotate]);
 
   const NodeColors = {
-    "range": "green",
-    "melee": "red",
-    "tank": "red",
-    "magic": "purple"
-  }
+    range: "green",
+    melee: "red",
+    magic: "purple"
+  };
 
-  const buildNode = (node, order) => {
+  const genNodeCoords = (node, order) => {
     const originAngle = angle * node.angle + 30 + angle * order;
     const axis = {
       x1: ringRadius * tier * Math.cos((originAngle * Math.PI) / 180),
@@ -69,22 +68,39 @@ export default ({
       y2: ringRadius * (tier + 1) * Math.sin((originAngle * Math.PI) / 180)
     };
 
-    const xlen = axis.x2 - axis.x1;
-    const ylen = axis.y2 - axis.y1;
+    return {
+      x: (1 - node.pos) * axis.x1 + node.pos * axis.x2,
+      y: (1 - node.pos) * axis.y1 + node.pos * axis.y2
+    };
+  };
 
-    const hlen = Math.sqrt(Math.pow(xlen, 2) + Math.pow(ylen, 2));
-
-    const ratio = hlen * node.pos;
-    const smallX = (1 - node.pos) * axis.x1 + node.pos * axis.x2;
-    const smallY = (1 - node.pos) * axis.y1 + node.pos * axis.y2;
+  const buildNode = (section, node, order) => {
+    const coords = genNodeCoords(node, order);
 
     return [
+      node.neighbours.map(neighborId => {
+        const neighbor = section.find(s => s.id === neighborId);
+        if (!neighbor) {
+          return;
+        }
+
+        const neighborCoords = genNodeCoords(neighbor, order);
+        return (
+          <Line
+            key={neighborId + "-line-" + node.id}
+            stroke="white"
+            fill="white"
+            strokeWidth={1}
+            points={[coords.x, coords.y, neighborCoords.x, neighborCoords.y]}
+          />
+        );
+      }),
       <Node
         key={node.id}
         onClick={() => console.log(node.name + " - " + node.angle)}
-        x={smallX}
-        y={smallY}
-        radius={(node.rarity * 2)}
+        x={coords.x}
+        y={coords.y}
+        radius={node.rarity * 2}
         color={NodeColors[node.category]}
       />
     ];
@@ -112,7 +128,9 @@ export default ({
               radius * Math.sin(((angle * i + 30) * Math.PI) / 180)
             ]}
           />
-          {treeJSON[tier][i].skills.map(node => buildNode(node, i))}
+          {treeJSON[tier][i].skills.map(node =>
+            buildNode(treeJSON[tier][i].skills, node, i)
+          )}
         </Group>
       ))}
     </Group>
