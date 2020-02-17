@@ -100,7 +100,7 @@ const App = () => {
   const onZoom = e => {
     e.evt.preventDefault();
 
-    const scaleBy = 1.02;
+    const scaleBy = 1.04;
     const stage = e.target.getStage();
     const oldScale = stage.scaleX();
     const mousePointTo = {
