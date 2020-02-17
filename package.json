@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server"
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "author": "Jesse Abramson",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "konva": "^4.1.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
