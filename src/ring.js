@@ -6,11 +6,11 @@ window.treeJSON = treeJSON;
 var x = Math.cos(0.75) * 150 * 0.25;
 var y = Math.sin(0.75) * 150 * 0.25;
 
-const Node = ({ x, y, onClick }) => {
+const Node = ({ x, y, onClick, radius, color }) => {
   return (
     <Circle
-      radius={3}
-      fill={"red"}
+      radius={radius}
+      fill={color}
       verticalAlign="middle"
       stroke="#0B0023"
       strokeWidth={1}
@@ -53,6 +53,13 @@ export default ({
     }
   }, [triggerRotation, setTriggerRotate]);
 
+  const NodeColors = {
+    "range": "green",
+    "melee": "red",
+    "tank": "red",
+    "magic": "purple"
+  }
+
   const buildNode = (node, order) => {
     const originAngle = angle * node.angle + 30 + angle * order;
     const axis = {
@@ -77,6 +84,8 @@ export default ({
         onClick={() => console.log(node.name + " - " + node.angle)}
         x={smallX}
         y={smallY}
+        radius={(node.rarity * 2)}
+        color={NodeColors[node.category]}
       />
     ];
   };
