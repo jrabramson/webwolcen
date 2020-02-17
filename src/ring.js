@@ -83,16 +83,14 @@ export default ({
               key={node.id}
               onClick={() => console.log(node.name + " - " + node.angle)}
               x={
-                radius * Math.cos(-node.angle-(angle * i - 90)*Math.PI/180) * node.pos
-                // 150 + Math.cos(parseFloat((node.angle - ((angle * i - 90) * (Math.PI / 180))))) *
-                // radius *
-                // parseFloat(node.pos) * 0.6
+                Math.cos(parseFloat((node.angle - ((angle * i - 90) * (Math.PI / 180))) * Math.PI * 0.6)) *
+                radius *
+                parseFloat(node.pos)
               }
               y={
-                radius * Math.sin(-node.angle-(angle * i - 90)*Math.PI/180) * node.pos
-                // Math.sin(parseFloat((node.angle - ((angle * i - 90) * (Math.PI / 180))))) *
-                // radius *
-                // parseFloat(node.pos) * 0.6
+                Math.sin(parseFloat((node.angle - ((angle * i - 90) * (Math.PI / 180))) * Math.PI * 0.6)) *
+                radius *
+                parseFloat(node.pos)
               }
             />
           ))}
