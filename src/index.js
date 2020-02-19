@@ -3,6 +3,8 @@ import { render } from "react-dom";
 import { Stage, Layer, Circle, Group, Line } from "react-konva";
 import useImage from "use-image";
 import styled, { keyframes } from "styled-components";
+import Konva from "konva"
+Konva.pixelRatio = 1
 
 import Ring from "./ring";
 import Interface from "./interface";
@@ -73,9 +75,7 @@ const Twinkle = styled(StarBase)`
 const App = () => {
   const stageRef = useRef(null);
   const ringsRef = useRef(null);
-  const [stageScale, setStageScale] = useState(1);
-  const [stageX, setStageX] = useState(0);
-  const [stageY, setStageY] = useState(0);
+  const [stageProps, setStageProps] = useState({ zoom: 1, x: 0, y: 0 });
   const [ringsX, setRingsX] = useState(window.innerWidth / 2);
   const [ringsY, setRingsY] = useState(window.innerHeight / 2);
   const [selectedRing, setSelectedRing] = useState(null);
@@ -113,13 +113,14 @@ const App = () => {
     if (newScale > 3.5) newScale = 3.5;
     if (newScale < 1) newScale = 1;
 
-    setStageScale(newScale);
-    setStageX(
-      -(mousePointTo.x - stage.getPointerPosition().x / newScale) * newScale
-    );
-    setStageY(
-      -(mousePointTo.y - stage.getPointerPosition().y / newScale) * newScale
-    );
+    stage.scale({ x: newScale, y: newScale });
+
+    setStageProps({
+      zoom: newScale,
+      x: -(mousePointTo.x - stage.getPointerPosition().x / newScale) * newScale,
+      y: -(mousePointTo.y - stage.getPointerPosition().y / newScale) * newScale
+    });
+    stage.batchDraw();
   };
 
   const onDragRings = e => {
@@ -142,6 +143,10 @@ const App = () => {
     setTriggerRotate({ tier: selectedRing, dir: "left" });
   };
 
+  const onClickNode = node => {
+    console.log(node);
+  };
+
   return (
     <div>
       <Starfield>
@@ -159,11 +164,11 @@ const App = () => {
         width={window.innerWidth}
         height={window.innerHeight}
         onWheel={onZoom}
-        scaleX={stageScale}
-        scaleY={stageScale}
+        scaleX={stageProps.zoom}
+        scaleY={stageProps.zoom}
         ref={stageRef}
-        x={stageX}
-        y={stageY}
+        x={stageProps.x}
+        y={stageProps.y}
         style={{ zIndex: 98, position: "relative" }}
       >
         <Layer>
@@ -186,6 +191,7 @@ const App = () => {
               segments={12}
               triggerRotation={triggerRotate}
               setTriggerRotate={setTriggerRotate}
+              onClickNode={onClickNode}
             />
             <Ring
               ringRadius={ringRadius}
@@ -195,6 +201,7 @@ const App = () => {
               segments={6}
               triggerRotation={triggerRotate}
               setTriggerRotate={setTriggerRotate}
+              onClickNode={onClickNode}
             />
             <Ring
               ringRadius={ringRadius}
@@ -204,6 +211,7 @@ const App = () => {
               segments={3}
               triggerRotation={triggerRotate}
               setTriggerRotate={setTriggerRotate}
+              onClickNode={onClickNode}
             />
           </Group>
         </Layer>

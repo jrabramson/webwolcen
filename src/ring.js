@@ -1,32 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Circle, Group, Line } from "react-konva";
 
+import Node from "./node";
 import treeJSON from "./tree.json";
-window.treeJSON = treeJSON;
-var x = Math.cos(0.75) * 150 * 0.25;
-var y = Math.sin(0.75) * 150 * 0.25;
-
-const Node = ({ x, y, onClick, radius, color }) => {
-  return (
-    <Circle
-      radius={radius}
-      fill={color}
-      verticalAlign="middle"
-      stroke="white"
-      strokeWidth={1}
-      onClick={onClick}
-      x={x}
-      y={y}
-    />
-  );
-};
 
 export default ({
   tier,
   segments,
   triggerRotation,
   setTriggerRotate,
-  ringRadius
+  ringRadius,
+  onClickNode
 }) => {
   const circleRef = useRef(null);
   const [isRotating, setIsRotating] = useState(false);
@@ -53,61 +37,8 @@ export default ({
     }
   }, [triggerRotation, setTriggerRotate]);
 
-  const NodeColors = {
-    range: "green",
-    melee: "red",
-    magic: "purple"
-  };
-
-  const genNodeCoords = (node, order) => {
-    const originAngle = angle * node.angle + 30 + angle * order;
-    const axis = {
-      x1: ringRadius * tier * Math.cos((originAngle * Math.PI) / 180),
-      y1: ringRadius * tier * Math.sin((originAngle * Math.PI) / 180),
-      x2: ringRadius * (tier + 1) * Math.cos((originAngle * Math.PI) / 180),
-      y2: ringRadius * (tier + 1) * Math.sin((originAngle * Math.PI) / 180)
-    };
-
-    return {
-      x: (1 - node.pos) * axis.x1 + node.pos * axis.x2,
-      y: (1 - node.pos) * axis.y1 + node.pos * axis.y2
-    };
-  };
-
-  const buildNode = (section, node, order) => {
-    const coords = genNodeCoords(node, order);
-
-    return [
-      node.neighbours.map(neighborId => {
-        const neighbor = section.find(s => s.id === neighborId);
-        if (!neighbor) {
-          return;
-        }
-
-        const neighborCoords = genNodeCoords(neighbor, order);
-        return (
-          <Line
-            key={neighborId + "-line-" + node.id}
-            stroke="white"
-            fill="white"
-            strokeWidth={1}
-            points={[coords.x, coords.y, neighborCoords.x, neighborCoords.y]}
-          />
-        );
-      }),
-      <Node
-        key={node.id}
-        onClick={() => console.log(node.name + " - " + node.angle)}
-        x={coords.x}
-        y={coords.y}
-        radius={node.rarity * 2}
-        color={NodeColors[node.category]}
-      />
-    ];
-  };
-
   return (
-    <Group ref={circleRef}>
+    <Group ref={circleRef} key={"tier-" + tier}>
       <Circle
         radius={radius}
         fill={tierShade[tier]}
@@ -116,7 +47,7 @@ export default ({
         strokeWidth={1}
       />
       {lines.map(i => (
-        <Group key={i}>
+        <Group key={"section-boundary-" + i}>
           <Line
             stroke="#0B0023"
             fill="#0B0023"
@@ -128,9 +59,18 @@ export default ({
               radius * Math.sin(((angle * i + 30) * Math.PI) / 180)
             ]}
           />
-          {treeJSON[tier][i].skills.map(node =>
-            buildNode(treeJSON[tier][i].skills, node, i)
-          )}
+          {treeJSON[tier][i].skills.map(node => (
+            <Node
+              section={treeJSON[tier][i].skills}
+              node={node}
+              order={i}
+              angle={angle}
+              ringRadius={ringRadius}
+              tier={tier}
+              key={node.id}
+              onClick={onClickNode}
+            />
+          ))}
         </Group>
       ))}
     </Group>
