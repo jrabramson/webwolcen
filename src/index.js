@@ -96,11 +96,11 @@ const App = () => {
       };
     else return pos;
   };
-
+  window.zoomSpeed = 1.01;
   const onZoom = e => {
     e.evt.preventDefault();
 
-    const scaleBy = 1.04;
+    const scaleBy = window.zoomSpeed;
     const stage = e.target.getStage();
     const oldScale = stage.scaleX();
     const mousePointTo = {
