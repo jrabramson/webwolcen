@@ -1555,7 +1555,7 @@
             },
             {
               "id": "WILL_22",
-              "name": "Purifier\'s Will",
+              "name": "Purifier's Will",
               "desc": "When your Force Shield is full, your damage taken is reduced.",
               "magicEffects": [
                 {
@@ -2520,7 +2520,7 @@
             },
             {
               "id": "DIST_16",
-              "name": "Archion\'s Teachings",
+              "name": "Archion's Teachings",
               "desc": "Attacks and spells that launch projectiles now launch an additional projectile. The damage of each projectile is reduced.",
               "magicEffects": [
                 {
@@ -4631,7 +4631,7 @@
             },
             {
               "id": "MELEE_25",
-              "name": "Hunter\'s Vigor",
+              "name": "Hunter's Vigor",
               "magicEffects": [
                 {
                   "type": "autodash_cdr_percent",
@@ -5250,7 +5250,7 @@
             {
               "id": "TANK_24",
               "name": "Sacred Oath",
-              "desc": "Blocking an enemy\'s attack applies Weakness, makes that enemy weaker and more vulnerable.",
+              "desc": "Blocking an enemy's attack applies Weakness, makes that enemy weaker and more vulnerable.",
               "magicEffects": [
                 {
                   "type": "weakness_aoe_onblock",
@@ -5536,7 +5536,7 @@
             {
               "id": "MAST_5",
               "name": "Residual Energy",
-              "desc": "Casting an spell empowers your next attacks with additional damage of the spell\'s type for a short period of time.",
+              "desc": "Casting an spell empowers your next attacks with additional damage of the spell's type for a short period of time.",
               "magicEffects": [
                 {
                   "type": "attack_damage_bonus_from_last_spell",
@@ -7062,7 +7062,7 @@
             },
             {
               "id": "REPU_6",
-              "name": "Caster\'s Woe",
+              "name": "Caster's Woe",
               "magicEffects": [
                 {
                   "type": "damage_percent_melee_weapon",
@@ -7112,20 +7112,20 @@
               "magicEffects": [
                 {
                   "type": "stack_tatoo_use_mechanic",
-                  "desc": "You gain 1 \\"Tenet\\" Point every %1s up to a maximum of %2 \\"Tenet Points\\", and 1 \\"Tenet Point\\" is consumed whenever you are Hit.",
+                  "desc": "You gain 1 \"Tenet\" Point every %1s up to a maximum of %2 \"Tenet Points\", and 1 \"Tenet Point\" is consumed whenever you are Hit.",
                   "values": {
                     "PSTStackTickrateFloat": "2.5",
                     "PSTStackMaxCountInt": "5"
                   },
-                  "text": "You gain 1 \\"Tenet\\" Point every 2.5s up to a maximum of 5 \\"Tenet Points\\", and 1 \\"Tenet Point\\" is consumed whenever you are Hit."
+                  "text": "You gain 1 \"Tenet\" Point every 2.5s up to a maximum of 5 \"Tenet Points\", and 1 \"Tenet Point\" is consumed whenever you are Hit."
                 },
                 {
                   "type": "stack_tatoo_damage_reduction",
-                  "desc": "%1 Damage Reduction per \\"Tenet\\" Point",
+                  "desc": "%1 Damage Reduction per \"Tenet\" Point",
                   "values": {
                     "DamagePercentFloat": "15"
                   },
-                  "text": "15% Damage Reduction per \\"Tenet\\" Point"
+                  "text": "15% Damage Reduction per \"Tenet\" Point"
                 }
               ],
               "rarity": 3,
@@ -7140,11 +7140,11 @@
               "magicEffects": [
                 {
                   "type": "stack_tatoo_damage_reduction",
-                  "desc": "%1 Damage Reduction per \\"Tenet\\" Point",
+                  "desc": "%1 Damage Reduction per \"Tenet\" Point",
                   "values": {
                     "DamagePercentFloat": "5"
                   },
-                  "text": "5% Damage Reduction per \\"Tenet\\" Point"
+                  "text": "5% Damage Reduction per \"Tenet\" Point"
                 }
               ],
               "rarity": 1,
@@ -7266,7 +7266,7 @@
             },
             {
               "id": "REPU_15",
-              "name": "Caster\'s Woe",
+              "name": "Caster's Woe",
               "magicEffects": [
                 {
                   "type": "damage_percent_melee_weapon",
@@ -7316,36 +7316,36 @@
               "magicEffects": [
                 {
                   "type": "stack_bullet_uses_mechanic",
-                  "desc": "You have %2 \\"Annointed Ammunition\\" Point(s) that are used each time a Projectile Skill is used. A Point of \\"Annointed Ammunition\\" is refilled every %1s",
+                  "desc": "You have %2 \"Annointed Ammunition\" Point(s) that are used each time a Projectile Skill is used. A Point of \"Annointed Ammunition\" is refilled every %1s",
                   "values": {
                     "PSTStackTickrateFloat": "2",
                     "PSTStackMaxCountInt": "5"
                   },
-                  "text": "You have 5 \\"Annointed Ammunition\\" Point(s) that are used each time a Projectile Skill is used. A Point of \\"Annointed Ammunition\\" is refilled every 2s"
+                  "text": "You have 5 \"Annointed Ammunition\" Point(s) that are used each time a Projectile Skill is used. A Point of \"Annointed Ammunition\" is refilled every 2s"
                 },
                 {
                   "type": "stack_bullet_proj_damage",
-                  "desc": "%1 Projectile Damage for each Point of \\"Annointed Ammunition\\" you have",
+                  "desc": "%1 Projectile Damage for each Point of \"Annointed Ammunition\" you have",
                   "values": {
                     "DamagePercentFloat": "10"
                   },
-                  "text": "10% Projectile Damage for each Point of \\"Annointed Ammunition\\" you have"
+                  "text": "10% Projectile Damage for each Point of \"Annointed Ammunition\" you have"
                 },
                 {
                   "type": "stack_bullet_melee_damage",
-                  "desc": "%1 Melee Damage for each empty \\"Annointed Ammunition\\" Point",
+                  "desc": "%1 Melee Damage for each empty \"Annointed Ammunition\" Point",
                   "values": {
                     "DamagePercentFloat": "10"
                   },
-                  "text": "10% Melee Damage for each empty \\"Annointed Ammunition\\" Point"
+                  "text": "10% Melee Damage for each empty \"Annointed Ammunition\" Point"
                 },
                 {
                   "type": "stack_bullet_charges_on_dodge_roll",
-                  "desc": "%1 \\"Annointed Ammunition\\" Point(s) refilled whenever you Dodge Roll",
+                  "desc": "%1 \"Annointed Ammunition\" Point(s) refilled whenever you Dodge Roll",
                   "values": {
                     "StackCountInt": "1"
                   },
-                  "text": "1 \\"Annointed Ammunition\\" Point(s) refilled whenever you Dodge Roll"
+                  "text": "1 \"Annointed Ammunition\" Point(s) refilled whenever you Dodge Roll"
                 }
               ],
               "rarity": 3,
@@ -7360,11 +7360,11 @@
               "magicEffects": [
                 {
                   "type": "stack_bullet_charges_on_critical",
-                  "desc": "%1 \\"Annointed Ammunition\\" Point(s) refilled whenever you deal a Critical Hit",
+                  "desc": "%1 \"Annointed Ammunition\" Point(s) refilled whenever you deal a Critical Hit",
                   "values": {
                     "StackCountInt": "1"
                   },
-                  "text": "1 \\"Annointed Ammunition\\" Point(s) refilled whenever you deal a Critical Hit"
+                  "text": "1 \"Annointed Ammunition\" Point(s) refilled whenever you deal a Critical Hit"
                 }
               ],
               "rarity": 1,
@@ -7379,13 +7379,13 @@
               "magicEffects": [
                 {
                   "type": "material_damage_on_elites",
-                  "desc": "Gain 1 \\"Headhunter\\" Points (Max %3) every  time an enemy that is Champion or above is killed, with Points resetting after %2s. \\"Headhunter\\" Points grant %1 Material Damage",
+                  "desc": "Gain 1 \"Headhunter\" Points (Max %3) every  time an enemy that is Champion or above is killed, with Points resetting after %2s. \"Headhunter\" Points grant %1 Material Damage",
                   "values": {
                     "PSTStackResetTimer": "30",
                     "PSTStackMaxCountInt": "5",
                     "DamagePercentFloat": "15"
                   },
-                  "text": "Gain 1 \\"Headhunter\\" Points (Max 15%) every  time an enemy that is Champion or above is killed, with Points resetting after 5s. \\"Headhunter\\" Points grant 30 Material Damage"
+                  "text": "Gain 1 \"Headhunter\" Points (Max 15%) every  time an enemy that is Champion or above is killed, with Points resetting after 5s. \"Headhunter\" Points grant 30 Material Damage"
                 }
               ],
               "rarity": 3,
@@ -7400,11 +7400,11 @@
               "magicEffects": [
                 {
                   "type": "material_damage_on_elites",
-                  "desc": "Duration of \\"Headhunter\\" Points before resetting is increased to %2s",
+                  "desc": "Duration of \"Headhunter\" Points before resetting is increased to %2s",
                   "values": {
                     "PSTStackResetTimer": "50"
                   },
-                  "text": "Duration of \\"Headhunter\\" Points before resetting is increased to %2s"
+                  "text": "Duration of \"Headhunter\" Points before resetting is increased to %2s"
                 }
               ],
               "rarity": 1,
@@ -7830,36 +7830,36 @@
               "magicEffects": [
                 {
                   "type": "stack_anger_uses_mechanic",
-                  "desc": "Your Attacks generate \\"Unleashed Fury\\" Points up to a maximum of %1. Points reset after %2s out of combat ",
+                  "desc": "Your Attacks generate \"Unleashed Fury\" Points up to a maximum of %1. Points reset after %2s out of combat ",
                   "values": {
                     "PSTStackMaxCountInt": "50",
                     "PSTStackResetTimer": "3"
                   },
-                  "text": "Your Attacks generate \\"Unleashed Fury\\" Points up to a maximum of 50. Points reset after 3s out of combat "
+                  "text": "Your Attacks generate \"Unleashed Fury\" Points up to a maximum of 50. Points reset after 3s out of combat "
                 },
                 {
                   "type": "stack_anger_attack_speed",
-                  "desc": "%1 Attack Speed Score per \\"Unleashed Fury\\" Point",
+                  "desc": "%1 Attack Speed Score per \"Unleashed Fury\" Point",
                   "values": {
                     "CharacteristicScorePercentInt": "3"
                   },
-                  "text": "3% Attack Speed Score per \\"Unleashed Fury\\" Point"
+                  "text": "3% Attack Speed Score per \"Unleashed Fury\" Point"
                 },
                 {
                   "type": "stack_anger_life_leech",
-                  "desc": "%1 Life Leech per \\"Unleashed Fury\\" Point",
+                  "desc": "%1 Life Leech per \"Unleashed Fury\" Point",
                   "values": {
                     "DamagePercentFloat": "0.2"
                   },
-                  "text": "0.2% Life Leech per \\"Unleashed Fury\\" Point"
+                  "text": "0.2% Life Leech per \"Unleashed Fury\" Point"
                 },
                 {
                   "type": "stack_anger_all_resistances",
-                  "desc": "%1 All Resistances Score per \\"Unleashed Fury\\" Point",
+                  "desc": "%1 All Resistances Score per \"Unleashed Fury\" Point",
                   "values": {
                     "CharacteristicScorePercentInt": "-1"
                   },
-                  "text": "-1% All Resistances Score per \\"Unleashed Fury\\" Point"
+                  "text": "-1% All Resistances Score per \"Unleashed Fury\" Point"
                 }
               ],
               "rarity": 3,
@@ -7874,19 +7874,19 @@
               "magicEffects": [
                 {
                   "type": "stack_anger_attack_speed",
-                  "desc": "%1 Attack Speed Score per \\"Unleashed Fury\\" Point",
+                  "desc": "%1 Attack Speed Score per \"Unleashed Fury\" Point",
                   "values": {
                     "CharacteristicScorePercentInt": "1"
                   },
-                  "text": "1% Attack Speed Score per \\"Unleashed Fury\\" Point"
+                  "text": "1% Attack Speed Score per \"Unleashed Fury\" Point"
                 },
                 {
                   "type": "stack_anger_life_leech",
-                  "desc": "%1 Life Leech per \\"Unleashed Fury\\" Point",
+                  "desc": "%1 Life Leech per \"Unleashed Fury\" Point",
                   "values": {
                     "DamagePercentFloat": "0.1"
                   },
-                  "text": "0.1% Life Leech per \\"Unleashed Fury\\" Point"
+                  "text": "0.1% Life Leech per \"Unleashed Fury\" Point"
                 }
               ],
               "rarity": 1,
@@ -8065,36 +8065,36 @@
               "magicEffects": [
                 {
                   "type": "can_proc_attunements",
-                  "desc": "Spells that inflict fire, frost, or lightning ailments grant passive bonuses called \\"Accords\\". Up to %1 \\"Accord(s)\\" can be active concurrently. Triggered \\"Accords\\" remain locked for %2s.  ",
+                  "desc": "Spells that inflict fire, frost, or lightning ailments grant passive bonuses called \"Accords\". Up to %1 \"Accord(s)\" can be active concurrently. Triggered \"Accords\" remain locked for %2s.  ",
                   "values": {
                     "CountInt": "1",
                     "DurationFlatFloat": "1"
                   },
-                  "text": "Spells that inflict fire, frost, or lightning ailments grant passive bonuses called \\"Accords\\". Up to 1 \\"Accord(s)\\" can be active concurrently. Triggered \\"Accords\\" remain locked for 1s.  "
+                  "text": "Spells that inflict fire, frost, or lightning ailments grant passive bonuses called \"Accords\". Up to 1 \"Accord(s)\" can be active concurrently. Triggered \"Accords\" remain locked for 1s.  "
                 },
                 {
                   "type": "attunement_fire",
-                  "desc": "\'\\"Abanazaar\'s Accord\\" is active for %3s unless it is triggered again. You have %1 Damage when \\"Abanazaar\'s Accord\\" is active",
+                  "desc": "'\"Abanazaar's Accord\" is active for %3s unless it is triggered again. You have %1 Damage when \"Abanazaar's Accord\" is active",
                   "values": {
                     "DamagePercentInt": "20"
                   },
-                  "text": "\'\\"Abanazaar\'s Accord\\" is active for %3s unless it is triggered again. You have 20% Damage when \\"Abanazaar\'s Accord\\" is active"
+                  "text": "'\"Abanazaar's Accord\" is active for %3s unless it is triggered again. You have 20% Damage when \"Abanazaar's Accord\" is active"
                 },
                 {
                   "type": "attunement_frost",
-                  "desc": "\\"Etheliel\'s Accord\\" is active for %3s unless it is triggered again. You have %1 Ailment Chance when \\"Etheliel\'s Accord\\" is active.",
+                  "desc": "\"Etheliel's Accord\" is active for %3s unless it is triggered again. You have %1 Ailment Chance when \"Etheliel's Accord\" is active.",
                   "values": {
                     "CharacteristicScorePercentInt": "50"
                   },
-                  "text": "\\"Etheliel\'s Accord\\" is active for %3s unless it is triggered again. You have 50% Ailment Chance when \\"Etheliel\'s Accord\\" is active."
+                  "text": "\"Etheliel's Accord\" is active for %3s unless it is triggered again. You have 50% Ailment Chance when \"Etheliel's Accord\" is active."
                 },
                 {
                   "type": "attunement_lightning",
-                  "desc": "\'\\"Beelmalik\'s Accord\\" is active for %3s unless it is triggered again. You have %1 Critical Chance when \\"Beelmalik\'s Accord\\" is active.",
+                  "desc": "'\"Beelmalik's Accord\" is active for %3s unless it is triggered again. You have %1 Critical Chance when \"Beelmalik's Accord\" is active.",
                   "values": {
                     "CharacteristicScorePercentInt": "50"
                   },
-                  "text": "\'\\"Beelmalik\'s Accord\\" is active for %3s unless it is triggered again. You have 50% Critical Chance when \\"Beelmalik\'s Accord\\" is active."
+                  "text": "'\"Beelmalik's Accord\" is active for %3s unless it is triggered again. You have 50% Critical Chance when \"Beelmalik's Accord\" is active."
                 }
               ],
               "rarity": 3,
@@ -8106,15 +8106,15 @@
             {
               "id": "ORAC_9",
               "name": "Dual Allegiance",
-              "desc": "Allows you to have two \\"Accords\\" active at any time.",
+              "desc": "Allows you to have two \"Accords\" active at any time.",
               "magicEffects": [
                 {
                   "type": "can_proc_attunements",
-                  "desc": "%1 \\"Accords\\" can be active concurrently",
+                  "desc": "%1 \"Accords\" can be active concurrently",
                   "values": {
                     "CountInt": "1"
                   },
-                  "text": "1 \\"Accords\\" can be active concurrently"
+                  "text": "1 \"Accords\" can be active concurrently"
                 }
               ],
               "rarity": 1,
@@ -8579,12 +8579,12 @@
               "magicEffects": [
                 {
                   "type": "stack_focus_damage",
-                  "desc": "%2 Damage per \\"Overload\\" Point. Basic Attacks generate 1 \\"Overload\\" Point up to a maximum of %1. Using a Skill consumes all \\"Overload\\" Points but doubles Damage of the Skill ",
+                  "desc": "%2 Damage per \"Overload\" Point. Basic Attacks generate 1 \"Overload\" Point up to a maximum of %1. Using a Skill consumes all \"Overload\" Points but doubles Damage of the Skill ",
                   "values": {
                     "PSTStackMaxCountInt": "6",
                     "DamagePercentFloat": "6"
                   },
-                  "text": "6% Damage per \\"Overload\\" Point. Basic Attacks generate 1 \\"Overload\\" Point up to a maximum of 6. Using a Skill consumes all \\"Overload\\" Points but doubles Damage of the Skill "
+                  "text": "6% Damage per \"Overload\" Point. Basic Attacks generate 1 \"Overload\" Point up to a maximum of 6. Using a Skill consumes all \"Overload\" Points but doubles Damage of the Skill "
                 }
               ],
               "rarity": 3,
@@ -8599,11 +8599,11 @@
               "magicEffects": [
                 {
                   "type": "stack_focus_damage",
-                  "desc": "\\"Overload\\" Points are halved instead of set to 0 when consumed.",
+                  "desc": "\"Overload\" Points are halved instead of set to 0 when consumed.",
                   "values": {
                     "PossibilityInt": "1"
                   },
-                  "text": "\\"Overload\\" Points are halved instead of set to 0 when consumed."
+                  "text": "\"Overload\" Points are halved instead of set to 0 when consumed."
                 }
               ],
               "rarity": 1,
@@ -8821,22 +8821,22 @@
               "magicEffects": [
                 {
                   "type": "stack_gadget_uses_mechanic",
-                  "desc": "Basic Attacks refill \\"Power Charge\\" Points by %1. %2 \\"Power Charge\\" Points are generated per second, capped between -%3 and +%3",
+                  "desc": "Basic Attacks refill \"Power Charge\" Points by %1. %2 \"Power Charge\" Points are generated per second, capped between -%3 and +%3",
                   "values": {
                     "PSTStackGainPerSecondInt": "4",
                     "PSTStackGainOnEvent": "4",
                     "PSTStackLossOnEvent": "10",
                     "PSTStackMaxCountInt": "100"
                   },
-                  "text": "Basic Attacks refill \\"Power Charge\\" Points by 4. 4 \\"Power Charge\\" Points are generated per second, capped between -10 and +%3"
+                  "text": "Basic Attacks refill \"Power Charge\" Points by 4. 4 \"Power Charge\" Points are generated per second, capped between -10 and +%3"
                 },
                 {
                   "type": "stack_gadget_damage",
-                  "desc": "Device and Skills with base Lightning Damage have their Damage increased by %1 multiplied by your current number of \\"Power Charge\\" Points",
+                  "desc": "Device and Skills with base Lightning Damage have their Damage increased by %1 multiplied by your current number of \"Power Charge\" Points",
                   "values": {
                     "DamagePercentFloat": "200"
                   },
-                  "text": "Device and Skills with base Lightning Damage have their Damage increased by 200% multiplied by your current number of \\"Power Charge\\" Points"
+                  "text": "Device and Skills with base Lightning Damage have their Damage increased by 200% multiplied by your current number of \"Power Charge\" Points"
                 }
               ],
               "rarity": 3,
@@ -8851,11 +8851,11 @@
               "magicEffects": [
                 {
                   "type": "stack_gadget_costs",
-                  "desc": "%1 reduction in \\"Power Charge\\" Points Cost for all Device Skills",
+                  "desc": "%1 reduction in \"Power Charge\" Points Cost for all Device Skills",
                   "values": {
                     "ResourcePercentFloat": "30"
                   },
-                  "text": "30% reduction in \\"Power Charge\\" Points Cost for all Device Skills"
+                  "text": "30% reduction in \"Power Charge\" Points Cost for all Device Skills"
                 }
               ],
               "rarity": 1,
@@ -9152,11 +9152,11 @@
               "magicEffects": [
                 {
                   "type": "damage_from_shield_block_chance",
-                  "desc": "Damage is increased by %1 multiplied by your equipped Shield\'s Block Chance",
+                  "desc": "Damage is increased by %1 multiplied by your equipped Shield's Block Chance",
                   "values": {
                     "MultiplierFloat": "0.5"
                   },
-                  "text": "Damage is increased by 0.5 multiplied by your equipped Shield\'s Block Chance"
+                  "text": "Damage is increased by 0.5 multiplied by your equipped Shield's Block Chance"
                 }
               ],
               "rarity": 1,
@@ -9171,11 +9171,11 @@
               "magicEffects": [
                 {
                   "type": "damage_from_shield_block_chance",
-                  "desc": "Damage is increased by %1 multiplied by your equipped Shield\'s Block Chance",
+                  "desc": "Damage is increased by %1 multiplied by your equipped Shield's Block Chance",
                   "values": {
                     "MultiplierFloat": "0.5"
                   },
-                  "text": "Damage is increased by 0.5 multiplied by your equipped Shield\'s Block Chance"
+                  "text": "Damage is increased by 0.5 multiplied by your equipped Shield's Block Chance"
                 }
               ],
               "rarity": 1,
@@ -9217,11 +9217,11 @@
               "magicEffects": [
                 {
                   "type": "damage_from_shield_block_chance",
-                  "desc": "Damage is increased by %1 multiplied by your equipped Shield\'s Block Chance",
+                  "desc": "Damage is increased by %1 multiplied by your equipped Shield's Block Chance",
                   "values": {
                     "MultiplierFloat": "50"
                   },
-                  "text": "Damage is increased by 50 multiplied by your equipped Shield\'s Block Chance"
+                  "text": "Damage is increased by 50 multiplied by your equipped Shield's Block Chance"
                 }
               ],
               "rarity": 1,
@@ -9309,21 +9309,21 @@
               "magicEffects": [
                 {
                   "type": "stack_block_uses_mechanic",
-                  "desc": "%2 \\"Fortress\\" Point(s) gained every %1s, up to a maximum of %3",
+                  "desc": "%2 \"Fortress\" Point(s) gained every %1s, up to a maximum of %3",
                   "values": {
                     "PSTStackGainOnTickInt": "1",
                     "PSTStackTickrateFloat": "1.5",
                     "PSTStackMaxCountInt": "10"
                   },
-                  "text": "1.5 \\"Fortress\\" Point(s) gained every 1s, up to a maximum of 10"
+                  "text": "1.5 \"Fortress\" Point(s) gained every 1s, up to a maximum of 10"
                 },
                 {
                   "type": "block_chance_per_block_stack",
-                  "desc": "%1 Block Chance per \\"Fortress\\" Point.",
+                  "desc": "%1 Block Chance per \"Fortress\" Point.",
                   "values": {
                     "ChancePercentInt": "4"
                   },
-                  "text": "4% Block Chance per \\"Fortress\\" Point."
+                  "text": "4% Block Chance per \"Fortress\" Point."
                 }
               ],
               "rarity": 3,
@@ -9338,11 +9338,11 @@
               "magicEffects": [
                 {
                   "type": "block_chance_per_block_stack",
-                  "desc": "%1 Block Chance per \\"Fortress\\" Point.",
+                  "desc": "%1 Block Chance per \"Fortress\" Point.",
                   "values": {
                     "ChancePercentInt": "1"
                   },
-                  "text": "1% Block Chance per \\"Fortress\\" Point."
+                  "text": "1% Block Chance per \"Fortress\" Point."
                 }
               ],
               "rarity": 1,
@@ -9357,28 +9357,28 @@
               "magicEffects": [
                 {
                   "type": "uses_fortress_mechanic",
-                  "desc": "While stationary, gain 1 \\"Inexorable\\" Point every %1s, up to a maximum of %2",
+                  "desc": "While stationary, gain 1 \"Inexorable\" Point every %1s, up to a maximum of %2",
                   "values": {
                     "PSTStackTickrateFloat": "1",
                     "PSTStackMaxCountInt": "10"
                   },
-                  "text": "While stationary, gain 1 \\"Inexorable\\" Point every 1s, up to a maximum of 10"
+                  "text": "While stationary, gain 1 \"Inexorable\" Point every 1s, up to a maximum of 10"
                 },
                 {
                   "type": "fortress_movement_speed",
-                  "desc": "%1 Movement Speed per \\"Inexorable\\" Point",
+                  "desc": "%1 Movement Speed per \"Inexorable\" Point",
                   "values": {
                     "SpeedPercentInt": "-5"
                   },
-                  "text": "-5% Movement Speed per \\"Inexorable\\" Point"
+                  "text": "-5% Movement Speed per \"Inexorable\" Point"
                 },
                 {
                   "type": "fortress_damage_percent",
-                  "desc": "%1 Damage per \\"Inexorable\\" Point",
+                  "desc": "%1 Damage per \"Inexorable\" Point",
                   "values": {
                     "DamagePercentFloat": "6"
                   },
-                  "text": "6% Damage per \\"Inexorable\\" Point"
+                  "text": "6% Damage per \"Inexorable\" Point"
                 }
               ],
               "rarity": 3,
@@ -9393,19 +9393,19 @@
               "magicEffects": [
                 {
                   "type": "fortress_health_regeneration",
-                  "desc": "%1 Health Regeneration per \\"Inexorable\\" Point",
+                  "desc": "%1 Health Regeneration per \"Inexorable\" Point",
                   "values": {
                     "ResourcePercentFloat": "10"
                   },
-                  "text": "10% Health Regeneration per \\"Inexorable\\" Point"
+                  "text": "10% Health Regeneration per \"Inexorable\" Point"
                 },
                 {
                   "type": "fortress_all_resistances",
-                  "desc": "%1 All Resistances Score per \\"Inexorable\\" Point",
+                  "desc": "%1 All Resistances Score per \"Inexorable\" Point",
                   "values": {
                     "CharacteristicScorePercentInt": "10"
                   },
-                  "text": "10% All Resistances Score per \\"Inexorable\\" Point"
+                  "text": "10% All Resistances Score per \"Inexorable\" Point"
                 }
               ],
               "rarity": 1,
@@ -9546,11 +9546,11 @@
               "magicEffects": [
                 {
                   "type": "minion_regeneration_percent",
-                  "desc": "%1 to Summons\' Health Regeneration",
+                  "desc": "%1 to Summons' Health Regeneration",
                   "values": {
                     "ResourcePercentFloat": "10"
                   },
-                  "text": "10% to Summons\' Health Regeneration"
+                  "text": "10% to Summons' Health Regeneration"
                 }
               ],
               "rarity": 1,
@@ -9602,7 +9602,7 @@
             },
             {
               "id": "NECRO_9",
-              "name": "Horde\'s Vitality",
+              "name": "Horde's Vitality",
               "desc": "Summons that die near you also drop a green globe.",
               "magicEffects": [
                 {
@@ -9629,11 +9629,11 @@
               "magicEffects": [
                 {
                   "type": "minion_offensive_speed_percent",
-                  "desc": "%1 to Summons\' Attack Speed Score and Spell Casting Speed Score",
+                  "desc": "%1 to Summons' Attack Speed Score and Spell Casting Speed Score",
                   "values": {
                     "CharacteristicFinalPercentInt": "10"
                   },
-                  "text": "10% to Summons\' Attack Speed Score and Spell Casting Speed Score"
+                  "text": "10% to Summons' Attack Speed Score and Spell Casting Speed Score"
                 }
               ],
               "rarity": 1,
@@ -9648,11 +9648,11 @@
               "magicEffects": [
                 {
                   "type": "minion_offensive_speed_percent",
-                  "desc": "%1 to Summons\' Attack Speed Score and Spell Casting Speed Score",
+                  "desc": "%1 to Summons' Attack Speed Score and Spell Casting Speed Score",
                   "values": {
                     "CharacteristicFinalPercentInt": "10"
                   },
-                  "text": "10% to Summons\' Attack Speed Score and Spell Casting Speed Score"
+                  "text": "10% to Summons' Attack Speed Score and Spell Casting Speed Score"
                 }
               ],
               "rarity": 1,
@@ -9686,11 +9686,11 @@
               "magicEffects": [
                 {
                   "type": "minion_offensive_speed_percent",
-                  "desc": "%1 to Summons\' Attack Speed Score and Spell Casting Speed Score",
+                  "desc": "%1 to Summons' Attack Speed Score and Spell Casting Speed Score",
                   "values": {
                     "CharacteristicFinalPercentInt": "10"
                   },
-                  "text": "10% to Summons\' Attack Speed Score and Spell Casting Speed Score"
+                  "text": "10% to Summons' Attack Speed Score and Spell Casting Speed Score"
                 },
                 {
                   "type": "health_percent",
@@ -9732,11 +9732,11 @@
               "magicEffects": [
                 {
                   "type": "minion_regeneration_percent",
-                  "desc": "%1 to Summons\' Health Regeneration",
+                  "desc": "%1 to Summons' Health Regeneration",
                   "values": {
                     "ResourcePercentFloat": "10"
                   },
-                  "text": "10% to Summons\' Health Regeneration"
+                  "text": "10% to Summons' Health Regeneration"
                 }
               ],
               "rarity": 1,
@@ -10192,7 +10192,7 @@
             },
             {
               "id": "SHDW_13",
-              "name": "All The World\'s A Stage",
+              "name": "All The World's A Stage",
               "magicEffects": [
                 {
                   "type": "attackspeed_score_percent",
@@ -10308,31 +10308,31 @@
             },
             {
               "id": "SHDW_17",
-              "name": "Life\'s First Movement",
+              "name": "Life's First Movement",
               "magicEffects": [
                 {
                   "type": "stack_balance_uses_mechanic",
-                  "desc": "You have %1 Points shared between \\"Lure of Light\\" and \\"Lure of Darkness\\" Points. Casting a Spell converts \\"Lure of Light\\" into \\"Lure of Darkness\\", and Attacking converts \\"Lure of Darkness\\" into \\"Lure of Light\\". When \\"Lure of Light\\" and \\"Lure of Darkness\\" Points have a weighting between 6/4, they are considered to be in Equilibrium.",
+                  "desc": "You have %1 Points shared between \"Lure of Light\" and \"Lure of Darkness\" Points. Casting a Spell converts \"Lure of Light\" into \"Lure of Darkness\", and Attacking converts \"Lure of Darkness\" into \"Lure of Light\". When \"Lure of Light\" and \"Lure of Darkness\" Points have a weighting between 6/4, they are considered to be in Equilibrium.",
                   "values": {
                     "PSTStackMaxCountInt": "10"
                   },
-                  "text": "You have 10 Points shared between \\"Lure of Light\\" and \\"Lure of Darkness\\" Points. Casting a Spell converts \\"Lure of Light\\" into \\"Lure of Darkness\\", and Attacking converts \\"Lure of Darkness\\" into \\"Lure of Light\\". When \\"Lure of Light\\" and \\"Lure of Darkness\\" Points have a weighting between 6/4, they are considered to be in Equilibrium."
+                  "text": "You have 10 Points shared between \"Lure of Light\" and \"Lure of Darkness\" Points. Casting a Spell converts \"Lure of Light\" into \"Lure of Darkness\", and Attacking converts \"Lure of Darkness\" into \"Lure of Light\". When \"Lure of Light\" and \"Lure of Darkness\" Points have a weighting between 6/4, they are considered to be in Equilibrium."
                 },
                 {
                   "type": "stack_balance_mixed_bonus",
-                  "desc": "While \\"Lure of Light\\" and \\"Lure of Darkness\\" are in \\"Equilibrium\\", your Attacks benefit from %1 of Spell Damage bonuses and your Spells %1 of Attack Damage bonuses",
+                  "desc": "While \"Lure of Light\" and \"Lure of Darkness\" are in \"Equilibrium\", your Attacks benefit from %1 of Spell Damage bonuses and your Spells %1 of Attack Damage bonuses",
                   "values": {
                     "DamagePercentFloat": "50"
                   },
-                  "text": "While \\"Lure of Light\\" and \\"Lure of Darkness\\" are in \\"Equilibrium\\", your Attacks benefit from 50% of Spell Damage bonuses and your Spells %1 of Attack Damage bonuses"
+                  "text": "While \"Lure of Light\" and \"Lure of Darkness\" are in \"Equilibrium\", your Attacks benefit from 50% of Spell Damage bonuses and your Spells %1 of Attack Damage bonuses"
                 },
                 {
                   "type": "stack_balance_mixed_malus",
-                  "desc": "While \\"Lure of Light\\" and \\"Lure of Darkness\\" are not in \\"Equilibrium\\", your Attacks lose %1 of Spell Damage bonuses and your Spells %1 of Attack Damage bonuses",
+                  "desc": "While \"Lure of Light\" and \"Lure of Darkness\" are not in \"Equilibrium\", your Attacks lose %1 of Spell Damage bonuses and your Spells %1 of Attack Damage bonuses",
                   "values": {
                     "DamagePercentFloat": "20"
                   },
-                  "text": "While \\"Lure of Light\\" and \\"Lure of Darkness\\" are not in \\"Equilibrium\\", your Attacks lose 20% of Spell Damage bonuses and your Spells %1 of Attack Damage bonuses"
+                  "text": "While \"Lure of Light\" and \"Lure of Darkness\" are not in \"Equilibrium\", your Attacks lose 20% of Spell Damage bonuses and your Spells %1 of Attack Damage bonuses"
                 }
               ],
               "rarity": 3,
@@ -10347,11 +10347,11 @@
               "magicEffects": [
                 {
                   "type": "stack_balance_uses_mechanic",
-                  "desc": "\\"Lure of Light\\" and \\"Lure of Darkness\\" Points are now considered to be in \\"Equilibrium\\" when they have a weighting between 7/3",
+                  "desc": "\"Lure of Light\" and \"Lure of Darkness\" Points are now considered to be in \"Equilibrium\" when they have a weighting between 7/3",
                   "values": {
                     "PossibilityInt": "1"
                   },
-                  "text": "\\"Lure of Light\\" and \\"Lure of Darkness\\" Points are now considered to be in \\"Equilibrium\\" when they have a weighting between 7/3"
+                  "text": "\"Lure of Light\" and \"Lure of Darkness\" Points are now considered to be in \"Equilibrium\" when they have a weighting between 7/3"
                 }
               ],
               "rarity": 1,
@@ -10445,7 +10445,7 @@
             },
             {
               "id": "PALA_2",
-              "name": "Lady\'s Hand",
+              "name": "Lady's Hand",
               "magicEffects": [
                 {
                   "type": "damage_percent_attack",
@@ -10464,7 +10464,7 @@
             },
             {
               "id": "PALA_3",
-              "name": "Lady\'s Hand",
+              "name": "Lady's Hand",
               "magicEffects": [
                 {
                   "type": "damage_percent_attack",
@@ -10567,7 +10567,7 @@
             },
             {
               "id": "PALA_8",
-              "name": "Dawn\'s Pious Striker",
+              "name": "Dawn's Pious Striker",
               "magicEffects": [
                 {
                   "type": "smite_wounded_on_sacred_damage",
@@ -11115,7 +11115,7 @@
             },
             {
               "id": "SPBD_13",
-              "name": "Pact Master\'s Song",
+              "name": "Pact Master's Song",
               "magicEffects": [
                 {
                   "type": "statusailment_inflict_score_flat_occult",
@@ -11782,20 +11782,20 @@
               "magicEffects": [
                 {
                   "type": "stacks_hunter_uses_mechanic",
-                  "desc": "While in Combat, gain \\"Cold Blooded\\" Points every %1s, up to a maximum of %2",
+                  "desc": "While in Combat, gain \"Cold Blooded\" Points every %1s, up to a maximum of %2",
                   "values": {
                     "PSTStackTickrateFloat": "2",
                     "PSTStackMaxCountInt": "5"
                   },
-                  "text": "While in Combat, gain \\"Cold Blooded\\" Points every 2s, up to a maximum of 5"
+                  "text": "While in Combat, gain \"Cold Blooded\" Points every 2s, up to a maximum of 5"
                 },
                 {
                   "type": "stacks_hunter_damage",
-                  "desc": "%1 Damage per \\"Cold Blooded\\" Point",
+                  "desc": "%1 Damage per \"Cold Blooded\" Point",
                   "values": {
                     "DamagePercentFloat": "10"
                   },
-                  "text": "10% Damage per \\"Cold Blooded\\" Point"
+                  "text": "10% Damage per \"Cold Blooded\" Point"
                 }
               ],
               "rarity": 3,
@@ -11810,11 +11810,11 @@
               "magicEffects": [
                 {
                   "type": "stacks_hunter_uses_mechanic",
-                  "desc": "Gain \\"Cold Blooded\\" Points every %1s",
+                  "desc": "Gain \"Cold Blooded\" Points every %1s",
                   "values": {
                     "PSTStackTickrateFloat": "1.5"
                   },
-                  "text": "Gain \\"Cold Blooded\\" Points every 1.5s"
+                  "text": "Gain \"Cold Blooded\" Points every 1.5s"
                 }
               ],
               "rarity": 1,
@@ -12001,30 +12001,30 @@
               "magicEffects": [
                 {
                   "type": "can_change_stances_with_dodgeroll",
-                  "desc": "Gain access to two \\"Stances\\": \\"Probing Weakness\\" and \\"Stalwart Resolve\\". A \\"Stance\\" is changed when a Dodge Roll is used.",
+                  "desc": "Gain access to two \"Stances\": \"Probing Weakness\" and \"Stalwart Resolve\". A \"Stance\" is changed when a Dodge Roll is used.",
                   "values": {
                     "PossibilityInt": "1"
                   },
-                  "text": "Gain access to two \\"Stances\\": \\"Probing Weakness\\" and \\"Stalwart Resolve\\". A \\"Stance\\" is changed when a Dodge Roll is used."
+                  "text": "Gain access to two \"Stances\": \"Probing Weakness\" and \"Stalwart Resolve\". A \"Stance\" is changed when a Dodge Roll is used."
                 },
                 {
                   "type": "stance_offensive_stats",
-                  "desc": "While \\"Probing Weakness\\" is active, you have a %1 Chance to double Attack Damage at the cost of %2 of your All Resistances Score",
+                  "desc": "While \"Probing Weakness\" is active, you have a %1 Chance to double Attack Damage at the cost of %2 of your All Resistances Score",
                   "values": {
                     "ChancePercentInt": "10",
                     "CharacteristicScorePercentInt": "25"
                   },
-                  "text": "While \\"Probing Weakness\\" is active, you have a 10% Chance to double Attack Damage at the cost of 25% of your All Resistances Score"
+                  "text": "While \"Probing Weakness\" is active, you have a 10% Chance to double Attack Damage at the cost of 25% of your All Resistances Score"
                 },
                 {
                   "type": "stance_defensive_stats",
-                  "desc": "While \\"Stalwart Resolve\\" is active, you have %1 Block Chance and %2 Block Efficiency at the cost of %3 of your Attack and Spell Damage",
+                  "desc": "While \"Stalwart Resolve\" is active, you have %1 Block Chance and %2 Block Efficiency at the cost of %3 of your Attack and Spell Damage",
                   "values": {
                     "ChancePercentInt": "10",
                     "ResourcePercentFloat": "25",
                     "CharacteristicScorePercentInt": "25"
                   },
-                  "text": "While \\"Stalwart Resolve\\" is active, you have 10% Block Chance and 25% Block Efficiency at the cost of 25% of your Attack and Spell Damage"
+                  "text": "While \"Stalwart Resolve\" is active, you have 10% Block Chance and 25% Block Efficiency at the cost of 25% of your Attack and Spell Damage"
                 }
               ],
               "rarity": 3,
@@ -12039,22 +12039,22 @@
               "magicEffects": [
                 {
                   "type": "stance_offensive_stats",
-                  "desc": "Increases Chance to double Attack Damage while \\"Probing Weakness\\" is active by %1",
+                  "desc": "Increases Chance to double Attack Damage while \"Probing Weakness\" is active by %1",
                   "values": {
                     "ChancePercentInt": "5",
                     "CharacteristicScorePercentInt": "0"
                   },
-                  "text": "Increases Chance to double Attack Damage while \\"Probing Weakness\\" is active by 5%"
+                  "text": "Increases Chance to double Attack Damage while \"Probing Weakness\" is active by 5%"
                 },
                 {
                   "type": "stance_defensive_stats",
-                  "desc": "Increases Block Chance while \\"Stalwart Resolve\\" is active by %1",
+                  "desc": "Increases Block Chance while \"Stalwart Resolve\" is active by %1",
                   "values": {
                     "ChancePercentInt": "5",
                     "ResourcePercentFloat": "0",
                     "CharacteristicScorePercentInt": "0"
                   },
-                  "text": "Increases Block Chance while \\"Stalwart Resolve\\" is active by 5%"
+                  "text": "Increases Block Chance while \"Stalwart Resolve\" is active by 5%"
                 }
               ],
               "rarity": 1,
@@ -12254,7 +12254,7 @@
             },
             {
               "id": "CHAMP_19",
-              "name": "Pugilist\'s Momentum",
+              "name": "Pugilist's Momentum",
               "magicEffects": [
                 {
                   "type": "final_weapon_combos",
@@ -12274,11 +12274,11 @@
                 },
                 {
                   "type": "final_weapon_combos_staves",
-                  "desc": "Fourth Attack of a Staff weapon Combo fires additional projectiles in Target\'s direction",
+                  "desc": "Fourth Attack of a Staff weapon Combo fires additional projectiles in Target's direction",
                   "values": {
                     "PossibilityInt": "1"
                   },
-                  "text": "Fourth Attack of a Staff weapon Combo fires additional projectiles in Target\'s direction"
+                  "text": "Fourth Attack of a Staff weapon Combo fires additional projectiles in Target's direction"
                 },
                 {
                   "type": "final_weapon_combos_two_handed",
@@ -12775,12 +12775,12 @@
               "magicEffects": [
                 {
                   "type": "take_delayed_damage",
-                  "desc": "You only take %1 Damage of an Enemy\'s attack when it Hits, the rest is inflicted %2s after the Hit",
+                  "desc": "You only take %1 Damage of an Enemy's attack when it Hits, the rest is inflicted %2s after the Hit",
                   "values": {
                     "DurationFlatFloat": "1",
                     "DamagePercentFloat": "40"
                   },
-                  "text": "You only take 1 Damage of an Enemy\'s attack when it Hits, the rest is inflicted 40%s after the Hit"
+                  "text": "You only take 1 Damage of an Enemy's attack when it Hits, the rest is inflicted 40%s after the Hit"
                 },
                 {
                   "type": "cap_max_health_and_force_shield",

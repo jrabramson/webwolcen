@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
-import { Circle, Line, Group } from "react-konva";
+import React, { useRef, useState, useEffect } from "react";
+import { Circle, Group } from "react-konva";
 
 const NodeColors = {
-  range: "green",
-  melee: "red",
-  tank: "red",
-  magic: "purple"
+  range: "#2eff5b",
+  melee: "#ff1212",
+  tank: "#ff1212",
+  magic: "#ff12f3"
 };
 
 const NodeColorsInactive = {
@@ -34,122 +34,47 @@ const genNodeCoords = (node, order, angle, ringRadius, tier) => {
   return axis;
 };
 
-export default ({ section, node, order, angle, ringRadius, tier, active, onClick }) => {
+export default ({
+  node,
+  order,
+  angle,
+  ringRadius,
+  tier,
+  onClick
+}) => {
   const nodeRef = useRef(null);
+  const [active, setActive] = useState(node.active);
+
+  useEffect(() => {
+    const object = nodeRef.current;
+    object.on("mouseenter", function() {
+      object.getStage().container().style.cursor = "pointer";
+    });
+    object.on("mouseleave", function() {
+      object.getStage().container().style.cursor = "default";
+    });
+  }, []);
 
   const coords = genNodeCoords(node, order, angle, ringRadius, tier);
-  const ringCoords = genNodeCoords(
-    {
-      angle: angle * order,
-      pos: node.pos * 0.95
-    },
-    order,
-    angle,
-    ringRadius,
-    tier
-  );
-  const nextRingCoords = genNodeCoords(
-    {
-      angle: 1,
-      pos: node.pos * 0.95
-    },
-    order,
-    angle,
-    ringRadius,
-    tier
-  );
 
-  const getRelativeNeighbor = neighborId => {
-    switch (neighborId) {
-      case "begin":
-        return { x: 0, y: 0, isRelativeDirection: true };
-      case "rightUp":
-      case "leftUp":
-        return {
-          x: coords.x2,
-          y: coords.y2,
-          isRelativeDirection: true
-        };
-      case "endRight":
-        return {
-          x: nextRingCoords.x,
-          y: nextRingCoords.y,
-          isRelativeDirection: true
-        };
-      case "rightDown":
-        return {
-          x:
-            ringRadius *
-            Math.cos(((angle * (order + 1) + 30) * Math.PI) / 180) *
-            node.pos,
-          y:
-            ringRadius *
-            Math.sin(((angle * (order + 1) + 30) * Math.PI) / 180) *
-            node.pos,
-          isRelativeDirection: true
-        };
-      case "endLeft":
-        return {
-          x: ringCoords.x,
-          y: ringCoords.y,
-          isRelativeDirection: true
-        };
-      case "leftDown":
-        return {
-          x:
-            ringRadius *
-            Math.cos(((angle * order + 30) * Math.PI) / 180) *
-            node.pos,
-          y:
-            ringRadius *
-            Math.sin(((angle * order + 30) * Math.PI) / 180) *
-            node.pos,
-          isRelativeDirection: true
-        };
-      default:
-        return null;
-    }
+  const clickNode = () => {
+    setActive(!active);
+    onClick(node);
   };
 
   return (
-    <Group onClick={() => onClick(node)}>
-      {node.neighbours.map(neighborId => {
-        let neighbor = section.find(s => s.id === neighborId);
-
-        if (!neighbor) {
-          neighbor = getRelativeNeighbor(neighborId);
-
-          if (!neighbor) {
-            return;
-          }
-        }
-
-        const neighborCoords = genNodeCoords(
-          neighbor,
-          order,
-          angle,
-          ringRadius,
-          tier
-        );
-        return (
-          <Line
-            key={neighborId + "-line-" + node.id}
-            stroke="#525763"
-            fill="#525763"
-            strokeWidth={1}
-            points={[coords.x, coords.y, neighborCoords.x, neighborCoords.y]}
-          />
-        );
-      })}
+    <Group>
       <Circle
         radius={node.rarity * 3}
-        fill={active ? NodeColors[node.category] : NodeColorsInactive[node.category]}
+        fill={
+          active ? NodeColors[node.category] : NodeColorsInactive[node.category]
+        }
         verticalAlign="middle"
         stroke="#525763"
         opacity={1}
         perfectDrawEnabled={false}
         strokeWidth={1}
-        onClick={() => console.log(node.name + " - " + node.angle)}
+        onClick={() => clickNode(node)}
         x={coords.x}
         y={coords.y}
         ref={nodeRef}

@@ -2,9 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import { Circle, Group, Line } from "react-konva";
 
 import Node from "./node";
-import treeJSON from "./tree.json";
+import Web from "./web";
 
 export default ({
+  sections,
+  relations,
   tier,
   segments,
   triggerRotation,
@@ -59,9 +61,15 @@ export default ({
               radius * Math.sin(((angle * i + 30) * Math.PI) / 180)
             ]}
           />
-          {treeJSON[tier][i].skills.map(node => (
+          <Web
+            section={sections[i].skills}
+            order={i}
+            angle={angle}
+            ringRadius={ringRadius}
+            tier={tier}
+          />
+          {sections[i].skills.map(node => (
             <Node
-              section={treeJSON[tier][i].skills}
               node={node}
               order={i}
               angle={angle}

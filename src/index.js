@@ -1,13 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { render } from "react-dom";
-import { Stage, Layer, Circle, Group, Line } from "react-konva";
-import useImage from "use-image";
+import { Stage, Layer, Group } from "react-konva";
 import styled, { keyframes } from "styled-components";
 import Konva from "konva";
+
 Konva.pixelRatio = 1;
 
 import Ring from "./ring";
 import Interface from "./interface";
+
+import treeJSON from "./scraped.json";
 
 const ringRadius = 150;
 
@@ -60,28 +62,30 @@ const StarBase = styled.div`
 
 const Star = styled(StarBase)`
   background: #000
-    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+    url(./stars.png) repeat top
     center;
   z-index: 0;
 `;
 const Twinkle = styled(StarBase)`
   background: transparent
-    url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat
+    url(./twinkling.png) repeat
     top center;
   z-index: 1;
   animation: ${moveTwinkBack} 200s linear infinite;
 `;
 
-window.zoomSpeed = 1.01;
-
 const App = () => {
   const stageRef = useRef(null);
   const ringsRef = useRef(null);
+
   const [stageProps, setStageProps] = useState({ zoom: 1, x: 0, y: 0 });
   const [ringsX, setRingsX] = useState(window.innerWidth / 2);
   const [ringsY, setRingsY] = useState(window.innerHeight / 2);
   const [selectedRing, setSelectedRing] = useState(null);
   const [triggerRotate, setTriggerRotate] = useState({ tier: -1, dir: null });
+  const [activeNodes, setActiveNodes] = useState([]);
+
+  const structure = treeJSON;
 
   const dragBounds = pos => {
     const stage = stageRef.current.getStage();
@@ -102,7 +106,7 @@ const App = () => {
   const onZoom = e => {
     e.evt.preventDefault();
 
-    const scaleBy = window.zoomSpeed;
+    const scaleBy = 1.1;
     const stage = e.target.getStage();
     const oldScale = stage.scaleX();
     const mousePointTo = {
@@ -146,7 +150,9 @@ const App = () => {
   };
 
   const onClickNode = node => {
-    console.log(node);
+    console.log(activeNodes);
+
+    setActiveNodes([...activeNodes, node.id]);
   };
 
   return (
@@ -185,36 +191,19 @@ const App = () => {
             width={ringRadius * 3}
             height={ringRadius * 3}
           >
-            <Ring
+            {structure.rings.map((ring, i) => <Ring
+              sections={ring.sections}
+              relations={ring.relations}
               ringRadius={ringRadius}
-              tier={2}
+              tier={ring.order}
+              key={"ring-" + ring.order}
               x={ringsX}
               y={ringsY}
-              segments={12}
+              segments={ring.sections.length}
               triggerRotation={triggerRotate}
               setTriggerRotate={setTriggerRotate}
               onClickNode={onClickNode}
-            />
-            <Ring
-              ringRadius={ringRadius}
-              tier={1}
-              x={ringsX}
-              y={ringsY}
-              segments={6}
-              triggerRotation={triggerRotate}
-              setTriggerRotate={setTriggerRotate}
-              onClickNode={onClickNode}
-            />
-            <Ring
-              ringRadius={ringRadius}
-              tier={0}
-              x={ringsX}
-              y={ringsY}
-              segments={3}
-              triggerRotation={triggerRotate}
-              setTriggerRotate={setTriggerRotate}
-              onClickNode={onClickNode}
-            />
+            />).reverse()}
           </Group>
         </Layer>
       </Stage>
