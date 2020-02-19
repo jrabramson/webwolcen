@@ -3,8 +3,8 @@ import { render } from "react-dom";
 import { Stage, Layer, Circle, Group, Line } from "react-konva";
 import useImage from "use-image";
 import styled, { keyframes } from "styled-components";
-import Konva from "konva"
-Konva.pixelRatio = 1
+import Konva from "konva";
+Konva.pixelRatio = 1;
 
 import Ring from "./ring";
 import Interface from "./interface";
@@ -72,6 +72,8 @@ const Twinkle = styled(StarBase)`
   animation: ${moveTwinkBack} 200s linear infinite;
 `;
 
+window.zoomSpeed = 1.01;
+
 const App = () => {
   const stageRef = useRef(null);
   const ringsRef = useRef(null);
@@ -96,7 +98,7 @@ const App = () => {
       };
     else return pos;
   };
-  window.zoomSpeed = 1.01;
+
   const onZoom = e => {
     e.evt.preventDefault();
 
