@@ -6,13 +6,15 @@ import Web from "./web";
 
 export default ({
   sections,
-  relations,
   tier,
   segments,
   triggerRotation,
   setTriggerRotate,
+  setRingRotation,
   ringRadius,
-  onClickNode
+  activeNodes,
+  onClickNode,
+  links
 }) => {
   const circleRef = useRef(null);
   const [isRotating, setIsRotating] = useState(false);
@@ -25,14 +27,20 @@ export default ({
   useEffect(() => {
     if (triggerRotation.tier === tier && !isRotating) {
       setIsRotating(true);
+      const rotation =
+        triggerRotation.dir === "right"
+          ? circleRef.current.getRotation() - angle
+          : circleRef.current.getRotation() + angle;
+
       circleRef.current.to({
-        rotation:
-          triggerRotation.dir === "right"
-            ? circleRef.current.getRotation() - angle
-            : circleRef.current.getRotation() + angle,
-        duration: 1,
+        rotation: rotation,
+        duration: 0.7,
         onFinish: () => {
           setIsRotating(false);
+
+          let newRotation = ((rotation / 360) * segments) % segments;
+          newRotation = newRotation < 0 ? segments + newRotation : newRotation;
+          setRingRotation(tier, newRotation);
         }
       });
       setTriggerRotate(-1);
@@ -67,6 +75,8 @@ export default ({
             angle={angle}
             ringRadius={ringRadius}
             tier={tier}
+            activeNodes={activeNodes}
+            links={links}
           />
           {sections[i].skills.map(node => (
             <Node
@@ -76,6 +86,7 @@ export default ({
               ringRadius={ringRadius}
               tier={tier}
               key={node.id}
+              active={activeNodes.indexOf(node.id) > -1}
               onClick={onClickNode}
             />
           ))}

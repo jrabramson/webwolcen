@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { Circle, Group } from "react-konva";
 
 const NodeColors = {
@@ -34,51 +34,46 @@ const genNodeCoords = (node, order, angle, ringRadius, tier) => {
   return axis;
 };
 
-export default ({
-  node,
-  order,
-  angle,
-  ringRadius,
-  tier,
-  onClick
-}) => {
-  const nodeRef = useRef(null);
-  const [active, setActive] = useState(node.active);
+export default React.memo(
+  ({ node, order, angle, ringRadius, tier, onClick, active }) => {
+    const nodeRef = useRef(null);
 
-  useEffect(() => {
-    const object = nodeRef.current;
-    object.on("mouseenter", function() {
-      object.getStage().container().style.cursor = "pointer";
-    });
-    object.on("mouseleave", function() {
-      object.getStage().container().style.cursor = "default";
-    });
-  }, []);
+    useEffect(() => {
+      const object = nodeRef.current;
+      object.on("mouseenter", function() {
+        object.getStage().container().style.cursor = "pointer";
+      });
+      object.on("mouseleave", function() {
+        object.getStage().container().style.cursor = "default";
+      });
+    }, []);
 
-  const coords = genNodeCoords(node, order, angle, ringRadius, tier);
+    const coords = genNodeCoords(node, order, angle, ringRadius, tier);
 
-  const clickNode = () => {
-    setActive(!active);
-    onClick(node);
-  };
+    const clickNode = () => {
+      onClick(node);
+    };
 
-  return (
-    <Group>
-      <Circle
-        radius={node.rarity * 3}
-        fill={
-          active ? NodeColors[node.category] : NodeColorsInactive[node.category]
-        }
-        verticalAlign="middle"
-        stroke="#525763"
-        opacity={1}
-        perfectDrawEnabled={false}
-        strokeWidth={1}
-        onClick={() => clickNode(node)}
-        x={coords.x}
-        y={coords.y}
-        ref={nodeRef}
-      />
-    </Group>
-  );
-};
+    return (
+      <Group>
+        <Circle
+          radius={node.rarity * 3}
+          fill={
+            active
+              ? NodeColors[node.category]
+              : NodeColorsInactive[node.category]
+          }
+          verticalAlign="middle"
+          stroke="#525763"
+          opacity={1}
+          perfectDrawEnabled={false}
+          strokeWidth={1}
+          onClick={() => clickNode(node)}
+          x={coords.x}
+          y={coords.y}
+          ref={nodeRef}
+        />
+      </Group>
+    );
+  }
+);
