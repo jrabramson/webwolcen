@@ -129,7 +129,7 @@ const Rings = () => {
 
   const [graph, setGraph] = useState(null);
   const [links, setLinks] = useState({});
-  const [stageProps, setStageProps] = useState({ zoom: 1, x: 0, y: 0 });
+  const [stageProps, setStageProps] = useState({ zoom: 1, x: -(window.innerWidth * 0.1), y: 0 });
   const [ringsX, setRingsX] = useState(window.innerWidth / 2);
   const [ringsY, setRingsY] = useState(window.innerHeight / 2);
   const [selectedRing, setSelectedRing] = useState(null);
@@ -362,7 +362,7 @@ const Rings = () => {
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       <Interface
         onRotateRight={onRotateRight}
         onRotateLeft={onRotateLeft}
@@ -370,7 +370,7 @@ const Rings = () => {
         selectedRing={selectedRing}
       />
       <Stage
-        width={window.innerWidth}
+        width={window.innerWidth * 0.80}
         height={window.innerHeight}
         onWheel={onZoom}
         scaleX={stageProps.zoom}

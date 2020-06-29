@@ -29,13 +29,10 @@ const RotateLeft = styled.button`
 `;
 
 const InterfaceImage = styled.div`
-  background-image: url(./gate.png);
+  background: grey;
   background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 760px;
-  width: 310px;
+  height: 100vh;
+  width: 20%;
   z-index: 99;
 `;
 
